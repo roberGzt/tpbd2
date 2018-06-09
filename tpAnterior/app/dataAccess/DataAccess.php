@@ -66,7 +66,6 @@ class DataAccess
     private function comprobarConexion()
     {
         if(pg_last_error())
-       //if (mysqli_connect_errno())
         {
             echo "Failed to connect to PostgreSQL: " . pg_last_error();
         }

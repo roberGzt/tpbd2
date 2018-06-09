@@ -19,19 +19,22 @@ class PersonaDao {
     {
         $band = false;
         $cn = new DataAccess();
-        $parametros = array($persona->getUsuario());
-        $sql = "SELECT * FROM persona WHERE usuario = $1";
+        $parametros = array($persona->getUsuario(),$persona->getNombre());
+        $sql = "SELECT COUNT (*) AS res FROM persona WHERE clave = MD5($2) AND usuario = $1";
         $datos = $cn->consultar($sql,$parametros);
-        foreach ($datos as $fila) 
-        {
-            if(passwordsEquals($persona->getClave(), $fila["clave"]))
-            {
-                $persona->setNombre($fila["nombre"]);
-                $persona->setApellido($fila["apellido"]);
-                $band = true;
-		echo "Clave verificada";
-            }
+        
+        $resultado = ($datos[0])["res"];
+
+        if ($resultado == 1){
+            $band = true;
+            echo "Clave verificada";
+            $parametros = array($persona->getUsuario());
+            $sql = "SELECT * FROM persona WHERE usuario = $1";
+            $fila = ($datos[0]);
+            $persona->setNombre($fila["nombre"]);
+            $persona->setApellido($fila["apellido"]);
         }
+        
         return $band;
     }
     
