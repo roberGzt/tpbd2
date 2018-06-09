@@ -9,6 +9,8 @@
         <?php
             logout();
             require_once ('./app/util/Sesion.php');
+            require_once ('./app/util/Logger.php');
+            log("Is logged?: " + islogged());
             if(!isLogged())
             {
                 include('./includes/signInUp.php');
