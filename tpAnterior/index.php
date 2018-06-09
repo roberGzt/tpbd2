@@ -7,7 +7,7 @@
     </head>
     <body>
         <?php
-            init();
+            logout();
             require_once ('./app/util/Sesion.php');
             if(!isLogged())
             {

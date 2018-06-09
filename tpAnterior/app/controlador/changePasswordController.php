@@ -27,7 +27,6 @@ else
         if(!$personaDao->login($persona))
         {
             $newURL.= '?error=La clave actual es erronea';
-
         }
         else
         {
