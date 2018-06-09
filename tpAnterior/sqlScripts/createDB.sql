@@ -1,4 +1,4 @@
-drop table if exists pelis_que_vio;
+﻿drop table if exists pelis_que_vio;
 drop table if exists persona;
 drop table if exists pelicula;
 
@@ -77,7 +77,7 @@ INSERT INTO Persona (usuario,clave,nombre,apellido) VALUES (_usuario, _clave, _n
 $$
 LANGUAGE SQL;
 
-DROP FUNCTION IF EXISTS FUNCTION loginPersona
+DROP FUNCTION IF EXISTS loginPersona
 (
 	_usuario varchar(30)
 );
@@ -95,7 +95,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-DROP FUNCTION IF EXISTS FUNCTION cambiarContrasena(
+DROP FUNCTION IF EXISTS cambiarContrasena(
 	_usuario VARCHAR(30), 
 	_clave VARCHAR
 );
