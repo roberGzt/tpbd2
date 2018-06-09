@@ -1,5 +1,7 @@
-drop table pelis_que_vio;
-drop table persona;
+drop table if exists pelis_que_vio;
+drop table if exists persona;
+drop table if exists pelicula;
+
 create table persona
 (
 	usuario varchar(30) primary key,
@@ -7,7 +9,7 @@ create table persona
 	apellido varchar(30),
 	nombre varchar(30)
 );
-drop table pelicula;
+
 create table pelicula
 (
 	pelicula_id serial primary key,
