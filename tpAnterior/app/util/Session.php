@@ -4,7 +4,6 @@ session_start();
 
 function getNombreApellido()
 {
-    
     $nombreCompleto = $_SESSION['nombre'] . " " . $_SESSION['apellido'];
     return $nombreCompleto; 
 }
