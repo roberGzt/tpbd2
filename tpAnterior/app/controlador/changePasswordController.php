@@ -2,7 +2,7 @@
 
 require_once ('../modelo/Persona.php');
 require_once ('../servicio/PersonaDao.php');
-require_once ('../util/Sesion.php');
+require_once ('../util/Session.php');
 
 $newURL = '../../changePassword.php';
 

@@ -2,7 +2,7 @@
 
 require_once ('../modelo/Persona.php');
 require_once ('../servicio/PersonaDao.php');
-require_once ('../util/Sesion.php');
+require_once ('../util/Session.php');
 
 $user = filter_input(INPUT_POST, "username");
 $clave = filter_input(INPUT_POST, "password");

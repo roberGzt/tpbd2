@@ -7,7 +7,7 @@
     </head>
     <body>
         <?php
-            require_once ('./app/util/Sesion.php');
+            require ('./app/util/Session.php');
             if(!isLogged())
             {
                 include('./includes/signInUp.php');

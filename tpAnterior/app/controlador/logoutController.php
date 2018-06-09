@@ -1,6 +1,6 @@
 <?php
 
-require_once ('../util/Sesion.php');
+require_once ('../util/Session.php');
 
 logout();
 
