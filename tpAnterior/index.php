@@ -17,8 +17,7 @@
             {
                 $newURL = 'listarPelisVistas.php';
                 header('Location: '.$newURL);
-            }
-                
+            }                
         ?>
         
     </body>
