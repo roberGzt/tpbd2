@@ -7,6 +7,7 @@
     </head>
     <body>
         <?php
+            init();
             require_once ('./app/util/Sesion.php');
             if(!isLogged())
             {

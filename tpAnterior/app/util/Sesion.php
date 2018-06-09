@@ -30,3 +30,9 @@ function isLogged()
 {
     return isset($_SESSION["user"]);
 }
+
+function init(){
+    unset($_SESSION['user']);
+    unset($_SESSION['nombre']);
+    unset($_SESSION['apellido']);
+}
