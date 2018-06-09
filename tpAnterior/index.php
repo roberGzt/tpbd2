@@ -7,10 +7,8 @@
     </head>
     <body>
         <?php
-            logout();
             require_once ('./app/util/Sesion.php');
-            require_once ('./app/util/Logger.php');
-            log("Is logged?: " + islogged());
+            init();
             if(!isLogged())
             {
                 include('./includes/signInUp.php');
