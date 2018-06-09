@@ -3,7 +3,7 @@
         <?php
             include('./includes/head.php');
         ?>
-        <title>TP2BDII</title>
+        <title>TP2 Bases de Datos 2</title>
     </head>
     <body>
         <?php
