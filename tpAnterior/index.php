@@ -8,7 +8,6 @@
     <body>
         <?php
             require_once ('./app/util/Sesion.php');
-            init();
             if(!isLogged())
             {
                 include('./includes/signInUp.php');
