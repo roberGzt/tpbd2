@@ -8,8 +8,6 @@
     <body>
         <?php
             require ('./app/util/Session.php');
-            require ('./app/util/Logger.php');
-            log("ALOHA HAWAIIIII");
             if(!isLogged())
             {
                 include('./includes/signInUp.php');
