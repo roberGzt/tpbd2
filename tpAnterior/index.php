@@ -1,7 +1,7 @@
 <html>
     <head>
         <?php
-            include('./includes/head.php');
+            include('./templates/header.html');
         ?>
         <title>TP2 Bases de Datos</title>
     </head>
@@ -10,7 +10,7 @@
             require ('./app/util/Session.php');
             if(!isLogged())
             {
-                include('./includes/signInUp.php');
+                include('./templates/signInUp.html');
             }
             else
             {

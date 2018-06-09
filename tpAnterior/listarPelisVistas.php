@@ -1,7 +1,7 @@
 <html>
     <head>
         <?php
-            include('./includes/head.php');
+            include('./templates/header.html');
         ?>
         <title>TP2BDII - Cambiar Contraseña</title>
     </head>
@@ -15,8 +15,8 @@
             }
             else
             {
-                include('./includes/navBar.php');
-                include('./includes/listarPelisQueVieronView.php');
+                include('./templates/navBar.html');
+                include('./templates/listarPelisQueVieronView.html');
             }
                 
         ?>
