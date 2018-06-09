@@ -79,14 +79,12 @@ LANGUAGE SQL;
 
 DROP FUNCTION IF EXISTS loginPersona
 (
-	_usuario varchar(30),
-	_clave VARCHAR
+	_usuario varchar(30)
 );
 
 CREATE FUNCTION loginPersona
 (
-	_usuario varchar(30),
-	_clave VARCHAR
+	_usuario varchar(30)
 )
 
 RETURNS TABLE ("usuario" varchar, "clave" varchar, "nombre" varchar, "apellido" varchar) AS
