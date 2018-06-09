@@ -12,7 +12,7 @@ class DataAccess
     public function __construct()
     {
         $this->_host = "host=127.0.0.1";
-        $this->_port = "port=5432";
+        $this->_port = "port=5434";
         $this->_credentials = "user=tp2bdii password=tp2bdii";
         $this->_dbname = "dbname=tp2bdii";
         $this->_band = 0;
