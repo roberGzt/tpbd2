@@ -3,7 +3,7 @@
         <?php
             include('./templates/header.html');
         ?>
-        <title>TP2BDII - Cambiar Contraseña</title>
+        <title>TP2 Bases de Datos - Cambiar Contraseña</title>
     </head>
     <body>
         <?php
