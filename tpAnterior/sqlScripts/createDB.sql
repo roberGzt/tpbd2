@@ -71,10 +71,10 @@ CREATE FUNCTION agregarPersona(
 	_apellido VARCHAR(30),
 	_nombre VARCHAR(30))
 
-RETURNS void AS \$\$
+RETURNS void AS $$
 
 INSERT INTO Persona (usuario,clave,nombre,apellido) VALUES (_usuario, _clave, _nombre, _apellido);
-\$\$
+$$
 LANGUAGE SQL;
 
 DROP FUNCTION IF EXISTS FUNCTION loginPersona
@@ -88,12 +88,12 @@ CREATE FUNCTION loginPersona
 )
 
 RETURNS TABLE ("usuario" varchar, "clave" varchar, "nombre" varchar, "apellido" varchar) AS
-\$\$
+$$
 BEGIN
 	RETURN QUERY
    	SELECT p.usuario, p.clave, p.nombre, p.apellido FROM persona p WHERE p.usuario = _usuario;
 END;
-\$\$ LANGUAGE plpgsql;
+$$ LANGUAGE plpgsql;
 
 DROP FUNCTION IF EXISTS FUNCTION cambiarContrasena(
 	_usuario VARCHAR(30), 
@@ -104,9 +104,9 @@ CREATE FUNCTION cambiarContrasena(
 	_usuario VARCHAR(30), 
 	_clave VARCHAR
 )
-RETURNS void AS \$\$
+RETURNS void AS $$
 
 UPDATE persona SET clave = _clave WHERE usuario = _usuario;
 
-\$\$
+$$
 LANGUAGE SQL;
