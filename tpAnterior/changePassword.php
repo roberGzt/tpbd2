@@ -17,5 +17,6 @@
             }
             include('./templates/footer.html');
         ?>
+        <script src="js/app/ui/changePassword.js"></script>
     </body>
 </html>
