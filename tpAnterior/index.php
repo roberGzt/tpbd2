@@ -8,17 +8,12 @@
     <body>
         <?php
             require ('./app/util/Session.php');
-            if(!isLogged())
-            {
+            if(!isLogged()) {
                 include('./templates/signInUp.html');
-            }
-            else
-            {
+            } else {
                 $newURL = 'listarPelisVistas.php';
                 header('Location: '.$newURL);
             }                
-        ?>
-        <?php
             include('./templates/footer.html');
         ?>
     </body>

@@ -11,13 +11,14 @@
             if(!isLogged()) {
                 $newURL = 'index.php';
                 header('Location: '.$newURL);
-            }
-            else {
+            } else {
                 include('./templates/navBar.html');
                 include('./templates/listarPelisQueVieronView.html');
             }
             include('./templates/footer.html');
         ?>
-        <script src="js/app/loaderPelisQueVieron.js"></script>
+        <script src="js/app/app.js"></script>
+        <script src="js/service/pelisVistas.js"></script>
+        <script src="js/ui/pelisVistas.js"></script>        
     </body>
 </html>

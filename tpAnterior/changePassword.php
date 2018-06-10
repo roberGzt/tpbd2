@@ -8,19 +8,13 @@
     <body>
         <?php
             require_once ('./app/util/Sesion.php');
-            if(!isLogged())
-            {
+            if(!isLogged()) {
                 $newURL = 'index.php';
                 header('Location: '.$newURL);
-            }
-            else
-            {
+            } else {
                 include('./templates/navBar.html');
                 include('./templates/changePasswordView.html');
             }
-                
-        ?>
-        <?php
             include('./templates/footer.html');
         ?>
     </body>
