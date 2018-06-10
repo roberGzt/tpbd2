@@ -1,0 +1,19 @@
+.app-loginbox {
+  margin-top: 50px;
+}
+
+.app-loginbox .panel-body {
+  padding-top: 30px;
+}
+
+.app-loginbox .alert {
+  display: none;
+}
+
+.app-loginbox .input-group {
+  margin-bottom: 25px;
+}
+
+.app-loginbox .app-submit {
+  margin-top: 10px;
+}
