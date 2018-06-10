@@ -7,34 +7,34 @@ class DataAccess
     private $_dbname;
     private $_cn;
     private $_port;
-    private $_band;
-
+    
     public function __construct()
     {
         $this->_host = "host=127.0.0.1";
         $this->_port = "port=5434";
         $this->_credentials = "user=tp2bdii password=tp2bdii";
         $this->_dbname = "dbname=tp2bdii";
-        $this->_band = 0;
+        $this->_cn = null;
     }
 
     private function abrir()
     {
-        if($this->_band == 1) return;
+        if(isConnectionAlive()) return;
         $stringConnection = "$this->_host $this->_port $this->_dbname $this->_credentials";
-        $this->_cn = pg_connect($stringConnection)
-                or die('No se ha podido conectar: ' . pg_last_error());
-        $this->_band = 1;
+        $this->_cn = pg_connect($stringConnection);
+        return isConnectionAlive();
     }
 
     private function cerrar()
     {
-        if($this->_band == 0) return;
-        //mysqli_close($this->_cn);
-        pg_close($this->_cn);
-        $this->_band = 0;
+        if(!isConnectionAlive()) return;
+        return pg_close($this->_cn);        
     }
-    
+
+    public function isConnectionAlive(){
+        return !is_null($this->_cn) && $this->_cn != false;
+    }
+
     public function ejecutar($consulta,$parametros)
     {
         $this->abrir();
@@ -63,7 +63,7 @@ class DataAccess
     
     private function comprobarConexion()
     {
-        if(pg_last_error())
+        if(!isConnectionAlive())
         {
             echo "Failed to connect to PostgreSQL: " . pg_last_error();
         }
