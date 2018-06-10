@@ -21,7 +21,7 @@ app.ui.changePassword = (function() {
       "showMethod": "fadeIn",
       "hideMethod": "fadeOut"
     };
-    mensaje.success? toastr.success("Contraseña cambiada con éxito") : mensaje.error? toastr.error("Error: " + mensaje.error) : null;
+    mensaje.success? toastr.success(mensaje.success) : mensaje.error? toastr.error(mensaje.error) : null;
   }
 
   return {

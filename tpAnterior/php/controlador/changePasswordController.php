@@ -6,20 +6,20 @@ require_once ('../util/Session.php');
 
 $newURL = '../../changePassword.php';
 
-$passwordNueva = filter_input(INPUT_POST, "passwordNueva");
-$passwordConfirmada = filter_input(INPUT_POST, "passwordConfirmacion");
+$passwordNuevo = filter_input(INPUT_POST, "passwordNuevo");
+$passwordConfirmacion = filter_input(INPUT_POST, "passwordConfirmacion");
 
-if($passwordNueva != $passwordConfirmada)
+if($passwordNuevo != $passwordConfirmacion)
 {
-    $newURL.= '?error=Las claves son distintas';
+    $newURL.= '?error=Error al actualizar: Las contraseñas ingresadas difieren.';
 }
 else
 {
     $persona = new Persona(getUserName(),null,null,$passwordActual);
     $personaDao = new PersonaDao();
-    $persona->setClave($passwordNueva);
+    $persona->setClave($passwordNuevo);
     $personaDao->cambiarContraseña($persona);
-    $newURL.= '?success=Clave cambiada con exito';
+    $newURL.= '?success=Constraseña actualizada con éxito.';
 }
 header('Location: '.$newURL);
 
