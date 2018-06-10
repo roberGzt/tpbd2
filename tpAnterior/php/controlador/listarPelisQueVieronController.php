@@ -13,8 +13,7 @@
                 $html.= "</tr>";
 
             }
-            //echo $html;
-            echo json_encode($tuplas);
+            echo $html;            
             
         ?>
 
