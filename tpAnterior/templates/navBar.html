@@ -5,20 +5,25 @@
     </div>
     <ul class="nav navbar-nav">
       <li>
+        <a href="#">
           <i class="fa fa-smile"></i>&nbsp;Hola &nbsp;
-        <?php
-                require_once ('./php/util/Session.php');
-                echo getNombreApellido();
-        ?>
+          <?php require_once ('./php/util/Session.php'); echo getNombreApellido(); ?>
+        </a>
       </li>
       <li>
-        <a href="changePassword.php"><i class="fa fa-key"></i>&nbsp; Cambiar Contraseña</a>
+        <a href="changePassword.php">
+          <i class="fa fa-key"></i>&nbsp; Cambiar Contraseña
+        </a>
       </li>
       <li>
-        <a href="php/controlador/logoutController.php"><i class="fa fa-power-off"></i>&nbsp; Cerrar Sesión</a>
+        <a href="listarPelisVistas.php">
+          <i class="fa fa-film"></i>&nbsp; Mostrar Peliculas vistas
+        </a>
       </li>
       <li>
-        <a href="listarPelisVistas.php"><i class="fa fa-film"></i>&nbsp; Mostrar Peliculas vistas</a>
+        <a href="php/controlador/logoutController.php">
+          <i class="fa fa-power-off"></i>&nbsp; Cerrar Sesión
+        </a>
       </li>
     </ul>
   </div>
