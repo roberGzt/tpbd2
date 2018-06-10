@@ -36,3 +36,7 @@
   display: none;
   margin-top: 50px;
 }
+
+.app-signupbox .app-btn-signup {
+  width: 100%;
+}
