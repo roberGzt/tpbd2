@@ -23,5 +23,6 @@
         <?php
             include('./templates/footer.html');
         ?>
+        <script src="js/loaderPelisQueVieron.js"></script>
     </body>
 </html>
