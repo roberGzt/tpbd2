@@ -25,9 +25,14 @@
 }
 
 .app-loginbox .app-mensajes {
-    margin-bottom: 25px  
+  margin-bottom: 25px;
 }
 
 .app-loginbox .app-btn-login {
-    width: 100%;
+  width: 100%;
+}
+
+.app-signupbox {
+  display: none;
+  margin-top: 50px;
 }
