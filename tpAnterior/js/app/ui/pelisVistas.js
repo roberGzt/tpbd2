@@ -4,7 +4,7 @@ app.ui.pelisVistas = (function() {
   }
 
   function listarPelisQueVieron() {
-    app.service.pelisVistas()
+    app.service.pelisVistas.listarPelisQueVieron()
       .done(function (data){
         $('#content').html(data);
         console.log("Carga de Listado de peliculas: OK");
