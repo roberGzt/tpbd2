@@ -1,5 +1,6 @@
 app.ui.pelisVistas = (function() {
   function inicializarUI() {
+    app.ui.utils.initUtils();
     listarPelisQueVieron();
   }
 
@@ -20,6 +21,6 @@ app.ui.pelisVistas = (function() {
   };
 })();
 
-$(document).ready(function() {
+$(document).ready(function() {  
   app.ui.pelisVistas.inicializarUI();
 });
