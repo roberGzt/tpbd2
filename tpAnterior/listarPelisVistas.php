@@ -1,12 +1,14 @@
 <html>
-    <head>
-        <?php
+
+<head>
+    <?php
             include('./templates/header.html');
         ?>
-        <title>TP2 Bases de Datos - Vista Principal</title>
-    </head>
-    <body>
-        <?php
+    <title>TP2 Bases de Datos - Vista Principal</title>
+</head>
+
+<body>
+    <?php
             require_once ('./php/util/Session.php');
             if(!isLogged()) {
                 $newURL = 'index.php';
@@ -17,7 +19,8 @@
             }
             include('./templates/footer.html');
         ?>
-        <script src="js/app/service/pelisVistas.js"></script>
-        <script src="js/app/ui/pelisVistas.js"></script>        
-    </body>
+    <script src="js/app/service/pelisVistas.js"></script>
+    <script src="js/app/ui/pelisVistas.js"></script>
+</body>
+
 </html>

@@ -1,4 +1,4 @@
-app.ui.changePassword = (function() {
+app.ui.notificaciones = (function() {
   function inicializarUI() {
     mostrarMensaje();
   }
@@ -13,5 +13,5 @@ app.ui.changePassword = (function() {
 })();
 
 $(document).ready(function() {
-  app.ui.changePassword.inicializarUI();
+  app.ui.notificaciones.inicializarUI();
 });
