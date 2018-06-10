@@ -9,7 +9,7 @@
         <?php
             require ('./php/util/Session.php');
             logout();            
-            include('./templates/signInUp.html');
+            include('./templates/login.html');
             include('./templates/footer.html');
         ?>
     </body>

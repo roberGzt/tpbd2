@@ -9,7 +9,7 @@
         <?php
             require ('./php/util/Session.php');
             if(!isLogged()) {
-                include('./templates/signInUp.html');
+                include('./templates/login.html');
             } else {
                 $newURL = 'listarPelisVistas.php';
                 header('Location: '.$newURL);
