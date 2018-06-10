@@ -30,12 +30,12 @@ alter table if exists pelicula
 add constraint UQ_pelicula_NombreRepetido
 unique (pelicula_nombre);
 
-insert into persona values ('juan','juan','Juan','Perez');
-insert into persona values ('maria','maria','Maria','Ibanies');
-insert into persona values ('lucas','lucas','Lucas','Miranda');
-insert into persona values ('pocho','lapantera','Pocho','Querido');
-insert into persona values ('julio','lucas','asdasd','Miranda');
-insert into persona values ('pedro','lapantera','asdasdads','Querido');
+insert into persona values ('juan',MD5('juan'),'Juan','Perez');
+insert into persona values ('maria',MD5('maria'),'Maria','Ibanies');
+insert into persona values ('lucas',MD5('lucas'),'Lucas','Miranda');
+insert into persona values ('pocho',MD5('lapantera'),'Pocho','Querido');
+insert into persona values ('julio',MD5('lucas'),'asdasd','Miranda');
+insert into persona values ('pedro',MD5('lapantera'),'asdasdads','Querido');
 
 insert into pelicula values (1,'Titanic');
 insert into pelicula values (2,'Rocky');
@@ -50,6 +50,8 @@ insert into pelis_que_vio values (2,'juan');
 insert into pelis_que_vio values (2,'maria');
 insert into pelis_que_vio values (3,'lucas');
 insert into pelis_que_vio values (3,'pocho');
+
+
 
 --Crear USUARIOS
 
@@ -73,7 +75,7 @@ CREATE FUNCTION agregarPersona(
 
 RETURNS void AS $$
 
-INSERT INTO Persona (usuario,clave,nombre,apellido) VALUES (_usuario, _clave, _nombre, _apellido);
+INSERT INTO Persona (usuario,clave,nombre,apellido) VALUES (_usuario, MD5(_clave), _nombre, _apellido);
 $$
 LANGUAGE SQL;
 
@@ -106,7 +108,7 @@ CREATE FUNCTION cambiarContrasena(
 )
 RETURNS void AS $$
 
-UPDATE persona SET clave = _clave WHERE usuario = _usuario;
+UPDATE persona SET clave = MD5(_clave) WHERE usuario = _usuario;
 
 $$
 LANGUAGE SQL;

@@ -9,7 +9,7 @@ class PersonaDao {
     function agregar(Persona $persona)
     {
         $cn = new DataAccess();
-        $parametros = array($persona->getUsuario(),encryptPwd($persona->getClave()),$persona->getNombre(),$persona->getApellido());
+        $parametros = array($persona->getUsuario(),$persona->getClave(),$persona->getNombre(),$persona->getApellido());
 
         $sql = "SELECT agregarPersona($1,$2,$3,$4)";
         $cn->ejecutar($sql,$parametros);
