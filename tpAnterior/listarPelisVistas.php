@@ -8,19 +8,14 @@
     <body>
         <?php
             require_once ('./app/util/Sesion.php');
-            if(!isLogged())
-            {
+            if(!isLogged()) {
                 $newURL = 'index.php';
                 header('Location: '.$newURL);
             }
-            else
-            {
+            else {
                 include('./templates/navBar.html');
                 include('./templates/listarPelisQueVieronView.html');
             }
-                
-        ?>
-        <?php
             include('./templates/footer.html');
         ?>
         <script src="js/app/loaderPelisQueVieron.js"></script>
