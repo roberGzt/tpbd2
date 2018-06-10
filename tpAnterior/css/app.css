@@ -18,7 +18,7 @@
   margin-top: 10px;
 }
 
-.app-loginbox .app-registrar-usuario {
+.app-loginbox,.app-signupbox .app-registrar-usuario {
   border-top: 1px solid#888;
   padding-top: 15px;
   font-size: 85%;
