@@ -1,4 +1,4 @@
 app = {
-    ui = {},
-    service = {}
+    ui : {},
+    service : {}
 };
