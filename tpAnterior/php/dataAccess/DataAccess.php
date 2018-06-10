@@ -24,7 +24,6 @@ class DataAccess
         $stringConnection = "$this->_host $this->_port $this->_dbname $this->_credentials";
         $this->_cn = pg_connect($stringConnection)
                 or die('No se ha podido conectar: ' . pg_last_error());
-        //$this->_cn = mysqli_connect($this->_host,$this->_user,$this->_pass, $this->_db);
         $this->_band = 1;
     }
 
@@ -40,7 +39,6 @@ class DataAccess
     {
         $this->abrir();
         $this->comprobarConexion();
-        //pg_query($this->_cn, $consulta);
         pg_query_params($this->_cn,$consulta,$parametros) or die('La consulta fallo: ' . pg_last_error());
         $this->cerrar();
     }
