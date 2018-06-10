@@ -43,3 +43,11 @@
 .app-signupbox .app-btn-signup {
   width: 100%;
 }
+
+.app-input-group {
+  margin-bottom: 25px;
+}
+
+.app-btn-submit{
+  width: 100%;
+}
