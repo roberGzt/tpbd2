@@ -7,7 +7,7 @@
     </head>
     <body>
         <?php
-            require_once ('./app/util/Sesion.php');
+            require_once ('./php/util/Sesion.php');
             if(!isLogged()) {
                 $newURL = 'index.php';
                 header('Location: '.$newURL);

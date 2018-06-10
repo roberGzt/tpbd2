@@ -7,7 +7,7 @@
     </head>
     <body>
         <?php
-            require ('./app/util/Session.php');
+            require ('./php/util/Session.php');
             if(!isLogged()) {
                 include('./templates/signInUp.html');
             } else {
