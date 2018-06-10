@@ -17,8 +17,7 @@
             }
             include('./templates/footer.html');
         ?>
-        <script src="js/app/app.js"></script>
-        <script src="js/service/pelisVistas.js"></script>
-        <script src="js/ui/pelisVistas.js"></script>        
+        <script src="js/app/service/pelisVistas.js"></script>
+        <script src="js/app/ui/pelisVistas.js"></script>        
     </body>
 </html>
