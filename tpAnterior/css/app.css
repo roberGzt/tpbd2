@@ -17,3 +17,17 @@
 .app-loginbox .app-submit {
   margin-top: 10px;
 }
+
+.app-loginbox .app-registrar-usuario {
+  border-top: 1px solid#888;
+  padding-top: 15px;
+  font-size: 85%;
+}
+
+.app-loginbox .app-mensajes {
+    margin-bottom: 25px  
+}
+
+.app-loginbox .app-btn-login {
+    width: 100%;
+}
