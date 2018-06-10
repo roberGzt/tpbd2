@@ -23,6 +23,10 @@
   font-size: 85%;
 }
 
+.app-registrar-usuario a {
+    text-align: center;
+}
+
 .app-loginbox .app-mensajes {
   margin-bottom: 25px;
 }
