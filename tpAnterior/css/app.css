@@ -51,3 +51,7 @@
 .app-btn-submit{
   width: 100%;
 }
+
+.toast {
+  opacity: 1 !important;
+}
