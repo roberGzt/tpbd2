@@ -20,5 +20,5 @@ app.ui.pelisVistas = (function() {
 })();
 
 $(document).ready(function() {
- app.ui.inicializarUI();
+ app.ui.pelisVistas.inicializarUI();
 });
