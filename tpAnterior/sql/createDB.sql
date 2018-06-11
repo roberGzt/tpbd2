@@ -54,7 +54,7 @@ insert into pelis_que_vio values (3,'pocho');
 
 
 --Crear USUARIOS
-
+DROP USER IF EXISTS tp2bdii;
 CREATE USER tp2bdii WITH PASSWORD 'tp2bdii';
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO tp2bdii;
 GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO tp2bdii;
