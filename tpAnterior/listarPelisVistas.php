@@ -11,8 +11,8 @@
     <?php
             require_once ('./php/util/Session.php');
             if(!isLogged()) {
-                $newURL = 'index.php';
-                header('Location: '.$newURL);
+                $URL = 'index.php';
+                header('Location: '.$URL);
             } else {
                 include('./templates/navBar.html');
                 include('./templates/listarPelisQueVieronView.html');

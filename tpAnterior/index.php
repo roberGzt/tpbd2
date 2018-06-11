@@ -13,8 +13,8 @@
             if(!isLogged()) {
                 include('./templates/login.html');
             } else {
-                $newURL = 'listarPelisVistas.php';
-                header('Location: '.$newURL);
+                $URL = 'listarPelisVistas.php';
+                header('Location: '.$URL);
             }
             include('./php/util/Notificaciones.php');                
             include('./templates/footer.html');

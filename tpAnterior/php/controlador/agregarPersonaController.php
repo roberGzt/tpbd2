@@ -16,7 +16,7 @@ $persona = new Persona($user,$nombre,$apellido,$clave);
 $personaDao = new PersonaDao();
 $personaDao->agregar($persona);
 
-$newURL = '../../index.php';
+$URL = '../../index.php';
 
-header('Location: '.$newURL);
+header('Location: '.$URL);
 

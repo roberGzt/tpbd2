@@ -9,13 +9,13 @@ $clave = filter_input(INPUT_POST, "password");
 
 echo "PASO";
 
-$newURL = '../../index.php';
+$URL = '../../index.php';
 
 $persona = new Persona($user,null,null,$clave);
 $personaDao = new PersonaDao();
 if(!$personaDao->login($persona))
 {
-    $newURL.= "?error=Datos ingresados no validos";
+    $URL.= "?error=Datos ingresados no validos";
 	echo "Mal";
     
 }
@@ -26,4 +26,4 @@ else
     echo "llegue";
 }
 
-//header('Location: '.$newURL);
+//header('Location: '.$URL);
