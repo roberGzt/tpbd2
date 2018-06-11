@@ -2,7 +2,6 @@
 
 require_once ('../modelo/Persona.php');
 require_once ('../dataSource/DataSource.php');
-require_once ('../util/Encriptador.php');
 
 class PersonaDao {
     private $mensajeError;
