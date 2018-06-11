@@ -9,14 +9,12 @@ $user = $_POST["user"];
 $nombre = $_POST["firstname"];
 $apellido = $_POST["lastname"];
 $clave = $_POST["passwd"];
-
+$URL = '../../index.php';
 
 
 $persona = new Persona($user,$nombre,$apellido,$clave);
 $personaDao = new PersonaDao();
-$personaDao->agregar($persona);
-
-$URL = '../../index.php';
+$URL .= $personaDao->agregar($persona)? "?success=Usuario creado con éxito." :  "?error=Ocurrió un error al crear el usuario: ".$personaDao->getmensajeError();
 
 header('Location: '.$URL);
 

@@ -5,17 +5,22 @@ require_once ('../dataSource/DataSource.php');
 require_once ('../util/Encriptador.php');
 
 class PersonaDao {
+    private $mensajeError;
     
-    function agregar(Persona $persona)
+    public function agregar(Persona $persona)
     {
         $dataSource = new DataSource();
         $parametros = array($persona->getUsuario(),$persona->getClave(),$persona->getNombre(),$persona->getApellido());
 
         $sql = "SELECT agregarPersona($1,$2,$3,$4)";
-        $dataSource->ejecutar($sql,$parametros);
+        $ret =  $dataSource->ejecutar($sql,$parametros)? true : false;
+        if (!$ret){
+            $mensajeError = $dataSource->getLastError();
+        }
+        return $ret;
     }
     
-    function login(Persona $persona)
+    public function login(Persona $persona)
     {
         $ret = false;
         $dataSource = new DataSource();
@@ -37,15 +42,27 @@ class PersonaDao {
                 }
             }
         }
+        if (!$ret){
+            $mensajeError = $dataSource->getLastError();
+        }
         return $ret;
     }
     
-    function cambiarContraseña(Persona $persona)
+    public function cambiarContraseña(Persona $persona)
     {
         $dataSource = new DataSource();
         $parametros = array($persona->getUsuario(),encryptPwd($persona->getClave()));
 
         $sql = "SELECT cambiarContrasena($1,$2)";
-        $dataSource->ejecutar($sql,$parametros);
+        $ret =  $dataSource->ejecutar($sql,$parametros)? true : false;
+        if (!$ret){
+            $mensajeError = $dataSource->getLastError();
+        }
+        return $ret;
     }
+
+    public function getmensajeError(){
+        return $mensajeError;
+    }
+
 }
