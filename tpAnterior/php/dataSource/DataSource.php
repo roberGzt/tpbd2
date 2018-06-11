@@ -35,7 +35,7 @@ class DataSource
         $this->abrir();        
         $ret = pg_query_params($this->_cn,$consulta,$parametros);
         $this->cerrar();
-        return ret;
+        return $ret? true :false;
     }
     
     public function consultar($consulta,$parametros)
