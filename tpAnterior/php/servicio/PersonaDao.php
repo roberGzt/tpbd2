@@ -23,17 +23,19 @@ class PersonaDao {
         $sql = "SELECT COUNT (*) AS res FROM persona WHERE clave = MD5($2) AND usuario = $1";
         $datos = $dataSource->consultar($sql,$parametros);
         
-        $resultado = $datos[0]["res"];
-        
-        if ($resultado == 1){
+        foreach ($datos as $fila) {
+            $resultado = $fila["res"];
+            if ($resultado == 1){
                 $ret = true;
                 $parametros = array($persona->getUsuario());
                 $sql = "SELECT * FROM persona WHERE usuario = $1";
-                
-                $personaQuery = $dataSource->consultar($sql,$parametros);
-                
-                $persona->setNombre($personaQuery[0]["nombre"]);
-                $persona->setApellido($personaQuery[0]"apellido"]);
+                $datos2 = $dataSource->consultar($sql,$parametros);
+
+                foreach ($datos2 as $fila2) {
+                    $persona->setNombre($fila2["nombre"]);
+                    $persona->setApellido($fila2["apellido"]);
+                }
+            }
         }
         return $ret;
     }
