@@ -50,7 +50,7 @@ class PersonaDao {
     public function cambiarContraseña(Persona $persona)
     {
         $dataSource = new DataSource();
-        $parametros = array($persona->getUsuario(),encryptPwd($persona->getClave()));
+        $parametros = array($persona->getUsuario(),$persona->getClave());
 
         $sql = "SELECT cambiarContrasena($1,$2)";
         $ret =  $dataSource->ejecutar($sql,$parametros)? true : false;
