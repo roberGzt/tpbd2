@@ -14,7 +14,7 @@ $URL = '../../index.php';
 
 $persona = new Persona($user,$nombre,$apellido,$clave);
 $personaDao = new PersonaDao();
-$URL .= $personaDao->agregar($persona)? "?success=Usuario creado con éxito." :  "?error=Ocurrió un error al crear el usuario: ".$personaDao->getmensajeError();
+$URL .= $personaDao->agregar($persona)? "?success=Usuario creado con éxito." :  "?error=Ocurrió un error al crear el usuario.";
 
 header('Location: '.$URL);
 
