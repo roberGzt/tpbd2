@@ -1,7 +1,7 @@
 <?php
 
 require_once ('../modelo/Tupla.php');
-require_once ('../dataAccess/DataAccess.php');
+require_once ('../dataSource/DataSource.php');
 
 class PelisQueVioDao {
     
@@ -9,7 +9,7 @@ class PelisQueVioDao {
     {
         $tuplas = array();
         $tupla = new Tupla(null, null);
-        $cn = new DataAccess();
+        $cn = new DataSource();
         $parametros = array();
         
         
@@ -32,7 +32,7 @@ and not exists ( select * from pelis_que_vio pqv3 where pqv2.usuario = pqv3.usua
     
     function listarNoVistas()
     {
-        $cn = new DataAccess();
+        $cn = new DataSource();
         $parametros = array();
 
         $sql = "SELECT listarNoVistas()";

@@ -1,7 +1,7 @@
 <?php
 
 require_once ('../modelo/Pelicula.php');
-require_once ('../dataAccess/DataAccess.php');
+require_once ('../dataSource/DataSource.php');
 
 class PeliculaDao {
     
@@ -9,7 +9,7 @@ class PeliculaDao {
     {
         $peliculas = array();
         $pelicula = new Pelicula(null, null);
-        $cn = new DataAccess();
+        $cn = new DataSource();
         $sql = "SELECT listarPeliculas()";
         $datos = $cn->consultar($sql,null);
         foreach ($datos as $fila) 

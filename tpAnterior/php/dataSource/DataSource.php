@@ -1,6 +1,6 @@
 <?php
 
-class DataAccess 
+class DataSource 
 {
     private $_host;
     private $_credentials;
@@ -9,8 +9,7 @@ class DataAccess
     private $_port;
     private $_band;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->_host = "host=127.0.0.1";
         $this->_port = "port=5434";
         $this->_credentials = "user=tp2bdii password=tp2bdii";
@@ -18,8 +17,7 @@ class DataAccess
         $this->_band = 0;
     }
 
-    private function abrir()
-    {
+    private function abrir() {
         if($this->_band == 1) return;
         $stringConnection = "$this->_host $this->_port $this->_dbname $this->_credentials";
         $this->_cn = pg_connect($stringConnection)
@@ -27,44 +25,41 @@ class DataAccess
         $this->_band = 1;
     }
 
-    private function cerrar()
-    {
+    private function cerrar() {
         if($this->_band == 0) return;
         pg_close($this->_cn);
         $this->_band = 0;
     }
     
-    public function ejecutar($consulta,$parametros)
-    {
-        $this->abrir();
-        $this->comprobarConexion();
-        pg_query_params($this->_cn,$consulta,$parametros) or die('La consulta fallo: ' . pg_last_error());
+    public function ejecutar($consulta,$parametros) {
+        $this->abrir();        
+        $ret = pg_query_params($this->_cn,$consulta,$parametros);
         $this->cerrar();
+        return ret;
     }
     
     public function consultar($consulta,$parametros)
     {
-        $this->abrir();
-        $this->comprobarConexion();
+        $this->abrir();       
         $datos = array();
-        $resultado = pg_query_params($this->_cn,$consulta,$parametros) or die('La consulta fallo: ' . pg_last_error());
-        if($resultado)
-        {
-            while ($row = pg_fetch_array($resultado, NULL, PGSQL_ASSOC))
-            {
+        $resultado = pg_query_params($this->_cn,$consulta,$parametros);
+        if($resultado) {
+            while ($row = pg_fetch_array($resultado, NULL, PGSQL_ASSOC)) {
                 $datos[] = $row;      
             }
             pg_free_result($resultado);
+        } else {
+            return $resultado;
         }
         $this->cerrar();
         return $datos;
     }
     
-    private function comprobarConexion()
-    {
-        if(pg_last_error())
-        {
-            echo "Failed to connect to PostgreSQL: " . pg_last_error();
+    public function getLastError(){
+        if (pg_last_error()){
+            return pg_last_error();
+        } else {
+            return false;
         }
     }
 }
