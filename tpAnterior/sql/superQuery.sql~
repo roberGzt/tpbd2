@@ -1,8 +1,12 @@
-
+<<<<<<< HEAD
+﻿select distinct pqv1.usuario as usuario1, pqv2.usuario as usuario2
+from pelis_que_vio pqv1, pelis_que_vio pqv2
+=======
 select distinct pqv1.usuario as usuario1, pqv2.usuario as usuario2   ----- 1 p1, 2 p1 , 3 p2: 
 from pelis_que_vio pqv1, pelis_que_vio pqv2  --<1,p1;2,p1>,<1,p1;3,p2>
                                              --<2,p1;3,p2>
-
+                                             
+>>>>>>> 277113ab6a84c28f4fae7e374ec2bac1aa66cb3b
 where pqv1.usuario < pqv2.usuario and not exists
 
 (select *  
@@ -24,7 +28,15 @@ and not exists
             from pelis_que_vio pqv6
             where pqv1.usuario = pqv6.usuario and pqv5.pelicula_id = pqv6.pelicula_id));
 
+<<<<<<< HEAD
 union
+
+
+
+
+select * from pelis_que_vio;
+
+select * from persona;
 
 
 select distinct p1.usuario as usuario1, p2.usuario as usuario2
@@ -57,4 +69,27 @@ where not exists
 
 where usuarios_que_no_vieron_nada_1.usuario <> usuarios_que_no_vieron_nada_2.usuario
 ;
-
+=======
+CREATE OR REPLACE FUNCTION superQuery()
+RETURNS SETOF col_tabla AS
+$BODY$
+declare
+tabla col_tabla%rowtype;
+begin
+for tabla in select distinct pqv1.usuario as usuario1, pqv2.usuario as usuario2
+from pelis_que_vio pqv1, pelis_que_vio pqv2
+where pqv1.usuario <> pqv2.usuario and not exists
+(select * 
+from pelis_que_vio pqv3
+where pqv1.usuario = pqv3.usuario and 
+not exists (select * from pelis_que_vio pqv4 where pqv2.usuario = pqv4.usuario and pqv3.pelicula_id=pqv4.pelicula_id))
+and not exists ( select * from pelis_que_vio pqv3 where pqv2.usuario = pqv3.usuario and not exists 
+(select * from pelis_que_vio pqv4 where pqv1.usuario = pqv4.usuario and pqv3.pelicula_id = pqv4.pelicula_id)); 
+from col_tabla loop
+return next tabla;
+end loop;
+return;
+end
+$BODY$
+LANGUAGE 'plpgsql';
+>>>>>>> 277113ab6a84c28f4fae7e374ec2bac1aa66cb3b
