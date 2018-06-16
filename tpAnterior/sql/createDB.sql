@@ -52,7 +52,6 @@ insert into pelis_que_vio values (3,'lucas');
 insert into pelis_que_vio values (3,'pocho');
 
 
-
 --Crear USUARIOS
 DROP USER IF EXISTS tp2bdii;
 CREATE USER tp2bdii WITH PASSWORD 'tp2bdii';

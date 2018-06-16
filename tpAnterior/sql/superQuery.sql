@@ -26,19 +26,6 @@ and not exists
 
 union
 
-
-select distinct p1.usuario as usuario1, p2.usuario as usuario2
-from persona p1, persona p2
-where p1.usuario < p2.usuario
-and not exists
-(
-	select * from pelis_que_vio pqv1 where pqv1.usuario = p1.usuario 
-	and not exists 
-	(
-		select * from pelis_que_vio pqv2 where pqv2.usuario = p2.usuario 
-	)
-);
-
 select usuarios_que_no_vieron_nada_1.usuario,usuarios_que_no_vieron_nada_2.usuario
 from
 (select p.usuario as usuario 
@@ -55,6 +42,6 @@ where not exists
 	select * from pelis_que_vio pqv where pqv.usuario = p.usuario 
 )) as usuarios_que_no_vieron_nada_2
 
-where usuarios_que_no_vieron_nada_1.usuario <> usuarios_que_no_vieron_nada_2.usuario
+where usuarios_que_no_vieron_nada_1.usuario < usuarios_que_no_vieron_nada_2.usuario
 ;
 
