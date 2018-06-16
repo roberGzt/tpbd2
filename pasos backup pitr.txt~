@@ -1,0 +1,6 @@
+BACKUP PITR
+Hacer backup inicial:
+
+sudo su postgres
+
+
