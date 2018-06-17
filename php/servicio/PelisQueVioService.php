@@ -65,7 +65,7 @@ class PelisQueVioService {
         $cn = new DataSource();
         $parametros = array($userName);        
         
-        $sql = "select p.pelicula_nombre 
+        $sql = "select p.pelicula_nombre as nombre
                 from pelicula p
                 inner join pelis_que_vio pqv
                 on p.pelicula_id = pvq.pelicula_id
@@ -73,7 +73,7 @@ class PelisQueVioService {
 
         $datos = $cn->consultar($sql,$parametros);
         foreach ($datos as $fila) {
-            $pelicula = new Pelicula($fila["pelicula_nombre"]);
+            $pelicula = new Pelicula($fila["nombre"]);
             $peliculas[] = $pelicula;       
         }
         return $peliculas;
