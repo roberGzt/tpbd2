@@ -5,9 +5,9 @@ drop table if exists pelicula;
 create table persona
 (
 	usuario varchar(30) primary key,
-	clave varchar,
-	apellido varchar(30),
-	nombre varchar(30)
+	clave varchar,	
+	nombre varchar(30),
+	apellido varchar(30)
 );
 
 create table pelicula
