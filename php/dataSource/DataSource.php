@@ -12,8 +12,8 @@ class DataSource
     public function __construct() {
         $this->_host = "host=127.0.0.1";
         $this->_port = "port=5434";
-        $this->_credentials = "user=tp2bdii password=tp2bdii";
-        $this->_dbname = "dbname=tp2bdii";
+        $this->_credentials = "user=tp2bd2 password=tp2bd2";
+        $this->_dbname = "dbname=tp2bd2";
         $this->_band = 0;
     }
 
