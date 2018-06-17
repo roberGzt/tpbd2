@@ -8,7 +8,6 @@ class PelisQueVioService {
     
     function listarVistas() {
         $tuplas = array();
-        $tupla = new Tupla(null, null);
         $cn = new DataSource();
         $parametros = array();        
         
