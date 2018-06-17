@@ -9,7 +9,7 @@
             $html.="Peliculas de " . getUserName();
             $html.=" Cantidad: " . count($peliculas);
             $html.=" peliculas: " . $peliculas;
-            foreach($pelicula as $peliculas){
+            foreach($peliculas as $pelicula){
                 $html.= "<li class=\"list-group-item\">" . $pelicula->getNombre() . "</li>";
             }
             echo $html;            
