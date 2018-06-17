@@ -11,7 +11,7 @@
                     $html.= "<li class=\"list-group-item\">" . $pelicula->getNombre() . "</li>";
                 }
             } else {
-                $html.="<h1>:-(<h1><h2>No viste ninguna peli!<h2>"
+                $html.="<h1>:-(<h1><h2>No viste ninguna peli!<h2>";
             }
             echo $html;            
         ?>
