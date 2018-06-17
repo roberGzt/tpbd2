@@ -3,7 +3,7 @@
 require_once ('../modelo/Tupla.php');
 require_once ('../dataSource/DataSource.php');
 
-class PelisQueVioDao {
+class PelisQueVioService {
     
     function listarVistas()
     {

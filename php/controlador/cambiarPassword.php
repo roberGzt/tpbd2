@@ -1,7 +1,7 @@
 <?php
 
 require_once ('../modelo/Persona.php');
-require_once ('../servicio/PersonaDao.php');
+require_once ('../servicio/PersonaService.php');
 require_once ('../util/Session.php');
 
 $URL = '../../changePassword.php';
@@ -16,9 +16,9 @@ if($passwordNuevo != $passwordConfirmacion)
 else
 {
     $persona = new Persona(getUserName(),null,null,$passwordActual);
-    $personaDao = new PersonaDao();
+    $PersonaService = new PersonaService();
     $persona->setClave($passwordNuevo);
-    $personaDao->cambiarContraseña($persona);
+    $PersonaService->cambiarContraseña($persona);
     $URL.= '?success=Constraseña actualizada con éxito.';
 }
 header('Location: '.$URL);

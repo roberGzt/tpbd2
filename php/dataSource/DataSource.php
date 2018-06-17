@@ -17,20 +17,6 @@ class DataSource
         $this->_band = 0;
     }
 
-    private function abrir() {
-        if($this->_band == 1) return;
-        $stringConnection = "$this->_host $this->_port $this->_dbname $this->_credentials";
-        $this->_cn = pg_connect($stringConnection)
-                or die('No se ha podido conectar: ' . pg_last_error());
-        $this->_band = 1;
-    }
-
-    private function cerrar() {
-        if($this->_band == 0) return;
-        pg_close($this->_cn);
-        $this->_band = 0;
-    }
-    
     public function ejecutar($consulta,$parametros) {
         $this->abrir();        
         $ret = pg_query_params($this->_cn,$consulta,$parametros);
@@ -62,4 +48,20 @@ class DataSource
             return false;
         }
     }
+
+    private function abrir() {
+        if($this->_band == 1) return;
+        $stringConnection = "$this->_host $this->_port $this->_dbname $this->_credentials";
+        $this->_cn = pg_connect($stringConnection)
+                or die('No se ha podido conectar: ' . pg_last_error());
+        $this->_band = 1;
+    }
+
+    private function cerrar() {
+        if($this->_band == 0) return;
+        pg_close($this->_cn);
+        $this->_band = 0;
+    }
+    
+   
 }

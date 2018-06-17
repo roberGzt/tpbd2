@@ -1,7 +1,7 @@
 <?php
 
 require_once ('../modelo/Persona.php');
-require_once ('../servicio/PersonaDao.php');
+require_once ('../servicio/PersonaService.php');
 
 
 
@@ -13,8 +13,8 @@ $URL = '../../index.php';
 
 
 $persona = new Persona($user,$nombre,$apellido,$clave);
-$personaDao = new PersonaDao();
-$URL .= $personaDao->agregar($persona)? "?success=Usuario creado con éxito." :  "?error=Ocurrió un error al crear el usuario.";
+$PersonaService = new PersonaService();
+$URL .= $PersonaService->agregar($persona)? "?success=Usuario creado con éxito." :  "?error=Ocurrió un error al crear el usuario.";
 
 header('Location: '.$URL);
 

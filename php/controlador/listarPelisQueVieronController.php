@@ -1,10 +1,10 @@
 
         <?php
             require_once ('../modelo/Tupla.php');
-            require_once ('../servicio/PelisQueVioDao.php');
+            require_once ('../servicio/PelisQueVioService.php');
             $html = "";
-            $pelisQueVioDao = new PelisQueVioDao();
-            $tuplas = $pelisQueVioDao->listarVistas();
+            $PelisQueVioService = new PelisQueVioService();
+            $tuplas = $PelisQueVioService->listarVistas();
             foreach($tuplas as $tupla)
             {
                 $html.= "<tr class=\"text-center\">";

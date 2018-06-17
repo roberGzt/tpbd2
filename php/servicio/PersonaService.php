@@ -3,7 +3,7 @@
 require_once ('../modelo/Persona.php');
 require_once ('../dataSource/DataSource.php');
 
-class PersonaDao {
+class PersonaService {
     private $mensajeError;
     
     public function agregar(Persona $persona)
