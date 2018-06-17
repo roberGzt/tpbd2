@@ -1,6 +1,7 @@
 <?php
 
 require_once ('../modelo/Tupla.php');
+require_once ('../modelo/Pelicula.php');
 require_once ('../dataSource/DataSource.php');
 
 class PelisQueVioService {
