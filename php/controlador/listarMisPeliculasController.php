@@ -6,8 +6,12 @@
             $html = "";
             $PelisQueVioService = new PelisQueVioService();
             $peliculas = $PelisQueVioService->listarPelisDe(getUserName());
-            foreach($peliculas as $pelicula){
-                $html.= "<li class=\"list-group-item\">" . $pelicula->getNombre() . "</li>";
+            if (count($peliculas) > 0 ){
+                foreach($peliculas as $pelicula){
+                    $html.= "<li class=\"list-group-item\">" . $pelicula->getNombre() . "</li>";
+                }
+            } else {
+                $html."<h1>:-(<h1><h2>No viste ninguna peli!<h2>"
             }
             echo $html;            
         ?>
