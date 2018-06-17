@@ -66,10 +66,9 @@ class PelisQueVioService {
         $parametros = array($userName);        
         
         $sql = "select p.pelicula_nombre as nombre
-                from pelicula p
-                inner join pelis_que_vio pqv
-                on p.pelicula_id = pvq.pelicula_id
-                where pvq.usuario = $1";
+                from pelicula p, pelis_que_vio pqv
+                where p.pelicula_id = pqv.pelicula_id
+                and pqv.usuario = '$1'";
 
         $datos = $cn->consultar($sql,$parametros);
         foreach ($datos as $fila) {
