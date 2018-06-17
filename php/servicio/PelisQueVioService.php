@@ -2,6 +2,7 @@
 
 require_once ('../modelo/Tupla.php');
 require_once ('../modelo/Pelicula.php');
+require_once ('../modelo/Persona.php');
 require_once ('../dataSource/DataSource.php');
 
 class PelisQueVioService {
@@ -60,9 +61,10 @@ class PelisQueVioService {
     }
 
     function listarPelisDe($userName) {
+        $persona = new Persona($userName,null,null,null);
         $peliculas = array();       
         $cn = new DataSource();
-        $parametros = array($userName);        
+        $parametros = array($persona->getUsuario());        
         
         $sql = "SELECT p.pelicula_nombre AS nombre
                 FROM pelicula p, pelis_que_vio pqv
