@@ -10,8 +10,7 @@ class PelisQueVioDao {
         $tuplas = array();
         $tupla = new Tupla(null, null);
         $cn = new DataSource();
-        $parametros = array();
-        
+        $parametros = array();        
         
         $sql = "
                 select distinct pqv1.usuario as usuario1, pqv2.usuario as usuario2 
@@ -61,14 +60,5 @@ class PelisQueVioDao {
        
         }
         return $tuplas;
-    }
-    
-    function listarNoVistas()
-    {
-        $cn = new DataSource();
-        $parametros = array();
-
-        $sql = "SELECT listarNoVistas()";
-        $cn->ejecutar($sql,$parametros);
     }
 }
