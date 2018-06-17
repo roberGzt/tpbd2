@@ -23,11 +23,11 @@ create table pelis_que_vio
 );
 
 alter  table if exists persona
-add constraint UQ_persona_nombreDuplicado
+add constraint persona_apellido_nombre_UQ
 unique (apellido,nombre);
 
 alter table if exists pelicula
-add constraint UQ_pelicula_NombreRepetido
+add constraint pelicula_nombre_UQ
 unique (pelicula_nombre);
 
 insert into persona values ('misael',MD5('misael'),'Misael','Britos');

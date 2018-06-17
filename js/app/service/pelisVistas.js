@@ -5,7 +5,14 @@ app.service.pelisVistas = (function() {
     });
   }
 
+  function listarMisPeliculas() {
+    return $.ajax({
+      url: "./php/controlador/listarMisPeliculasController.php"
+    });
+  }
+
   return {
-    listarPelisQueVieron: listarPelisQueVieron
+    listarPelisQueVieron: listarPelisQueVieron,
+    listarMisPeliculas: listarMisPeliculas
   };
 })();

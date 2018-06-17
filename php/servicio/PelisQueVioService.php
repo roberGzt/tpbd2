@@ -5,8 +5,7 @@ require_once ('../dataSource/DataSource.php');
 
 class PelisQueVioService {
     
-    function listarVistas()
-    {
+    function listarVistas() {
         $tuplas = array();
         $tupla = new Tupla(null, null);
         $cn = new DataSource();
@@ -53,12 +52,30 @@ class PelisQueVioService {
                 where usuarios_que_no_vieron_nada_1.usuario < usuarios_que_no_vieron_nada_2.usuario
                 ";
         $datos = $cn->consultar($sql,$parametros);
-        foreach ($datos as $fila) 
-        {
+        foreach ($datos as $fila) {
             $tupla = new Tupla($fila["usuario1"],$fila["usuario2"]);
             $tuplas[] = $tupla;
        
         }
         return $tuplas;
+    }
+
+    function listarPelisDe($userName) {
+        $peliculas = array();       
+        $cn = new DataSource();
+        $parametros = array($userName);        
+        
+        $sql = "select p.pelicula_nombre 
+                from pelicula p
+                inner join pelis_que_vio pqv
+                on p.pelicula_id = pvq.pelicula_id
+                where pvq.usuario = $1";
+
+        $datos = $cn->consultar($sql,$parametros);
+        foreach ($datos as $fila) {
+            $pelicula = new Pelicula($fila["pelicula_nombre"]);
+            $peliculas[] = $pelicula;       
+        }
+        return $peliculas;
     }
 }
