@@ -55,3 +55,7 @@
 .toast {
   opacity: 1 !important;
 }
+
+.app-tabla-query {
+  padding-top: 20px;
+}
