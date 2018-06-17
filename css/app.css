@@ -59,3 +59,7 @@
 .app-tabla-query {
   padding-top: 20px;
 }
+
+.app-border-zero {
+  border-radius: 0%;
+}
