@@ -16,6 +16,7 @@
             } else {
                 include('./templates/navBar.html');
                 include('./templates/listarPelisQueVieronView.html');
+                include('./templates/listarMisPeliculas.html');
             }
             include('./templates/footer.html');
         ?>
