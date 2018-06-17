@@ -9,6 +9,9 @@
             foreach($pelicula as $peliculas){
                 $html.= "<li class=\"list-group-item\">" . $pelicula->getNombre() . "</li>";
             }
+
+            $html .= "USER: " . getUserName();
+            
             echo $html;            
             
         ?>
