@@ -15,7 +15,7 @@ create table pelicula
 	pelicula_id serial primary key,
 	pelicula_nombre varchar(30)
 );
-create table PELIS_QUE_VIO
+create table pelis_que_vio
 (
 	pelicula_id int references pelicula(pelicula_id),
 	usuario varchar(20) references persona(usuario),
@@ -30,26 +30,38 @@ alter table if exists pelicula
 add constraint UQ_pelicula_NombreRepetido
 unique (pelicula_nombre);
 
-insert into persona values ('juan',MD5('juan'),'Juan','Perez');
-insert into persona values ('maria',MD5('maria'),'Maria','Ibanies');
-insert into persona values ('lucas',MD5('lucas'),'Lucas','Miranda');
-insert into persona values ('pocho',MD5('lapantera'),'Pocho','Querido');
-insert into persona values ('julio',MD5('lucas'),'asdasd','Miranda');
-insert into persona values ('pedro',MD5('lapantera'),'asdasdads','Querido');
+insert into persona values ('misael',MD5('misael'),'Misael','Britos');
+insert into persona values ('rober',MD5('rober'),'Rober','Gerszenswit');
+insert into persona values ('maxi',MD5('maxi'),'Maximiliano','Lucero Correa');
+insert into persona values ('maria',MD5('maria'),'Maria','Jimenez');
+insert into persona values ('pedro',MD5('pedro'),'Pedro','Fernandez');
+insert into persona values ('lucia',MD5('lucia'),'Lucía','Perez');
+insert into persona values ('juan',MD5('juan'),'Juan','Quito');
+insert into persona values ('franco',MD5('franco'),'Franco','Pepin');
 
-insert into pelicula values (1,'Titanic');
+insert into pelicula values (1,'Avengers');
 insert into pelicula values (2,'Rocky');
-insert into pelicula values (3,'Furia');
-insert into pelicula values (4,'Peli');
-insert into pelicula values (5,'WHAT');
+insert into pelicula values (3,'Buscando a Nemo');
+insert into pelicula values (4,'Esperando la Carroza');
+insert into pelicula values (5,'Star Trek');
 
 
-insert into pelis_que_vio values (1,'juan');
-insert into pelis_que_vio values (1,'maria');
-insert into pelis_que_vio values (2,'juan');
-insert into pelis_que_vio values (2,'maria');
-insert into pelis_que_vio values (3,'lucas');
-insert into pelis_que_vio values (3,'pocho');
+insert into pelis_que_vio values (1,'misael');
+insert into pelis_que_vio values (1,'rober');
+insert into pelis_que_vio values (1,'maxi');
+insert into pelis_que_vio values (2,'misael');
+insert into pelis_que_vio values (2,'rober');
+insert into pelis_que_vio values (2,'maxi');
+insert into pelis_que_vio values (3,'misael');
+insert into pelis_que_vio values (3,'rober');
+insert into pelis_que_vio values (3,'maxi');
+
+insert into pelis_que_vio values (3,'maria');
+insert into pelis_que_vio values (3,'pedro');
+insert into pelis_que_vio values (4,'maria');
+insert into pelis_que_vio values (4,'pedro');
+
+insert into pelis_que_vio values (5,'franco');
 
 
 --Crear USUARIOS
