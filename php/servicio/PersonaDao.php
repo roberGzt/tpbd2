@@ -10,8 +10,7 @@ class PersonaDao {
     {
         $dataSource = new DataSource();
         $parametros = array($persona->getUsuario(),$persona->getClave(),$persona->getNombre(),$persona->getApellido());
-
-        $sql = "SELECT agregarPersona($1,$2,$3,$4)";
+        $sql = "INSERT INTO Persona (usuario,clave,nombre,apellido) VALUES ($1, MD5($2), $3, $4)";
         $ret =  $dataSource->ejecutar($sql,$parametros)? true : false;
         if (!$ret){
             $mensajeError = $dataSource->getLastError();
@@ -50,9 +49,9 @@ class PersonaDao {
     public function cambiarContraseña(Persona $persona)
     {
         $dataSource = new DataSource();
-        $parametros = array($persona->getUsuario(),$persona->getClave());
+        $parametros = array($persona->getUsuario(),$persona->getClave());        
 
-        $sql = "SELECT cambiarContrasena($1,$2)";
+        $sql = "UPDATE persona SET clave = MD5($2) WHERE usuario = $1";
         $ret =  $dataSource->ejecutar($sql,$parametros)? true : false;
         if (!$ret){
             $mensajeError = $dataSource->getLastError();
