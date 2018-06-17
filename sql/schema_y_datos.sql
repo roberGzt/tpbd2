@@ -61,6 +61,10 @@ insert into pelis_que_vio values (3,'pedro');
 insert into pelis_que_vio values (4,'maria');
 insert into pelis_que_vio values (4,'pedro');
 
+insert into pelis_que_vio values (1,'franco');
+insert into pelis_que_vio values (2,'franco');
+insert into pelis_que_vio values (3,'franco');
+insert into pelis_que_vio values (4,'franco');
 insert into pelis_que_vio values (5,'franco');
 
 
