@@ -11,7 +11,6 @@ app.ui.pelisVistas = (function() {
       .done(function(data) {
         $("#mismas-peliculas-content").html(data);
         console.log("Carga de Listado de peliculas: OK");
-        console.log("recibido: " + data);
       })
       .fail(function() {
         console.log("Carga de Listado de peliculas: FALLO");
@@ -24,7 +23,6 @@ app.ui.pelisVistas = (function() {
       .done(function(data) {
         $("#mis-peliculas-content").html(data);
         console.log("Carga de Listado de peliculas del usuario: OK");
-        console.log("recibido: " + data);
       })
       .fail(function() {
         console.log("Carga de Listado de peliculas del usuario: FALLO");
