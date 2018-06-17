@@ -22,8 +22,7 @@ app.ui.pelisVistas = (function() {
     app.service.pelisVistas
       .listarMisPeliculas()
       .done(function(data) {
-        $("#mis-peliculas-content").html("Ejecutada peticion");
-        $("#mis-peliculas-content").append(data);
+        $("#mis-peliculas-content").html(data);
         console.log("Carga de Listado de peliculas del usuario: OK");
         console.log("recibido: " + data);
       })
@@ -37,6 +36,6 @@ app.ui.pelisVistas = (function() {
   };
 })();
 
-$(document).ready(function() {  
+$(document).ready(function() {
   app.ui.pelisVistas.inicializarUI();
 });
