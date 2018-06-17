@@ -7,7 +7,7 @@
             $tuplas = $pelisQueVioDao->listarVistas();
             foreach($tuplas as $tupla)
             {
-                $html.= "<tr>";
+                $html.= "<tr class="text-center">";
                 $html.= "<td>" . $tupla->getUsuario1() . "</td>";
                 $html.= "<td>" . $tupla->getUsuario2() . "</td>";
                 $html.= "</tr>";
