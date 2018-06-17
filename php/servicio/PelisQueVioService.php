@@ -11,8 +11,7 @@ class PelisQueVioService {
         $cn = new DataSource();
         $parametros = array();        
         
-        $sql = "
-                select distinct pqv1.usuario as usuario1, pqv2.usuario as usuario2 
+        $sql = "SELECT distinct pqv1.usuario as usuario1, pqv2.usuario as usuario2 
                 from pelis_que_vio pqv1, pelis_que_vio pqv2  
                 where pqv1.usuario < pqv2.usuario 
                 and not exists
@@ -65,10 +64,10 @@ class PelisQueVioService {
         $cn = new DataSource();
         $parametros = array($userName);        
         
-        $sql = "select p.pelicula_nombre as nombre
-                from pelicula p, pelis_que_vio pqv
-                where p.pelicula_id = pqv.pelicula_id
-                and pqv.usuario = '$1'";
+        $sql = "SELECT p.pelicula_nombre AS nombre
+                FROM pelicula p, pelis_que_vio pqv
+                WHERE p.pelicula_id = pqv.pelicula_id
+                AND pqv.usuario = $1";
 
         $datos = $cn->consultar($sql,$parametros);
         foreach ($datos as $fila) {
