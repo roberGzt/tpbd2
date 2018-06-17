@@ -51,7 +51,7 @@ class PelisQueVioDao {
                 where not exists
                     (select * from pelis_que_vio pqv where pqv.usuario = p.usuario)
                 ) as usuarios_que_no_vieron_nada_2
-                where usuarios_que_no_vieron_nada_1.usuario < usuarios_que_no_vieron_nada_2.usuario;
+                where usuarios_que_no_vieron_nada_1.usuario < usuarios_que_no_vieron_nada_2.usuario
                 ";
         $datos = $cn->consultar($sql,$parametros);
         foreach ($datos as $fila) 

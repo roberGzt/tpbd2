@@ -11,7 +11,6 @@
                 $html.= "<td>" . $tupla->getUsuario1() . "</td>";
                 $html.= "<td>" . $tupla->getUsuario2() . "</td>";
                 $html.= "</tr>";
-
             }
             echo $html;            
             
